@@ -1,13 +1,13 @@
 {
   "functions": {
-    "api/sup": {
+    "api/sup.js": {
       "memory": 512,
       "maxDuration": 10
     }
   },
   "routes": [
     {
-      "src": "/api",
+      "src": "/api/sup",
       "dest": "api/sup.js"
     },
     {
