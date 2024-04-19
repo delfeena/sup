@@ -1,0 +1,14 @@
+{
+  "name": "your-project-name",
+  "version": "1.0.0",
+  "description": "Description of your project",
+  "main": "index.js", // or the entry point for your serverless function
+  "scripts": {
+    "start": "node index.js" // or the command to start your serverless function
+  },
+  "dependencies": {
+    "puppeteer": "^12.1.0", // or the specific version you're using
+    "ejs": "^3.1.6" // if you decide to use EJS for rendering HTML templates
+    // Add any other dependencies your project requires
+  }
+}
