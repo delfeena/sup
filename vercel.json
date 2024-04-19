@@ -7,7 +7,7 @@
   },
   "routes": [
     {
-      "src": "/api/sup",
+      "src": "/api",
       "dest": "api/sup.js"
     },
     {
