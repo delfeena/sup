@@ -1,0 +1,18 @@
+{
+  "functions": {
+    "api/sup": {
+      "memory": 512, // Memory limit for the function in megabytes
+      "maxDuration": 10 // Maximum execution duration for the function in seconds
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/sup",
+      "dest": "api/sup.js" // Path to your serverless function file
+    },
+    {
+      "src": "/(.*)",
+      "dest": "index.html" // Fallback route to serve your HTML page
+    }
+  ]
+}
