@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intercepted Requests</title>
+    <style>
+        /* Add CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .intercepted-requests {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .intercepted-request {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Intercepted Requests</h1>
+        <div class="intercepted-requests" id="interceptedRequests">
+            <!-- Interceptor requests will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code to fetch and display intercepted requests
+        window.onload = function() {
+            fetchInterceptedRequests();
+        };
+
+        async function fetchInterceptedRequests() {
+            try {
+                const response = await fetch('/api/sup');
+                const data = await response.json();
+
+                const interceptedRequests = data.interceptedRequests;
+                const interceptedRequestsContainer = document.getElementById('interceptedRequests');
+
+                interceptedRequests.forEach(request => {
+                    const requestElement = document.createElement('div');
+                    requestElement.classList.add('intercepted-request');
+                    requestElement.textContent = request;
+                    interceptedRequestsContainer.appendChild(requestElement);
+                });
+            } catch (error) {
+                console.error('An error occurred:', error);
+            }
+        }
+    </script>
+</body>
+</html>
